@@ -10,7 +10,7 @@ public class MythEntity {
 
 // USE THIS IF THE OTHER DOESN'T WORK strategy = jakarta.persistence.GenerationType.IDENTITY
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     @Column(name = "myth_id")
     private Long id;
 
