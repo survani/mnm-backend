@@ -8,7 +8,6 @@ import java.util.Date;
 @Table(name = "myths")
 public class MythEntity {
 
-// USE THIS IF THE OTHER DOESN'T WORK strategy = jakarta.persistence.GenerationType.IDENTITY
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     @Column(name = "myth_id")
@@ -41,7 +40,12 @@ public class MythEntity {
     @Column(name = "fact")
     private String fact;
 
-    public MythEntity(Long id, String title, String description, String topic, String imageUrl, int likes, int shockedFactor, Date publishedDate, String content, String fact) {
+    @Column(name = "featured")
+    private Boolean featured;
+
+
+
+    public MythEntity(Long id, String title, String description, String topic, String imageUrl, int likes, int shockedFactor, Date publishedDate, String content, String fact, Boolean featured) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -52,6 +56,7 @@ public class MythEntity {
         this.publishedDate = publishedDate;
         this.content = content;
         this.fact = fact;
+        this.featured = featured;
     }
 
     public MythEntity() {
@@ -137,5 +142,13 @@ public class MythEntity {
 
     public void setFact(String fact) {
         this.fact = fact;
+    }
+
+    public Boolean getFeatured() {
+        return featured;
+    }
+
+    public void setFeatured(Boolean featured) {
+        this.featured = featured;
     }
 }
