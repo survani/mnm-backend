@@ -2,6 +2,7 @@ package com.mythsnomore.MythsNoMore.entity;
 import jakarta.persistence.*;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -32,7 +33,7 @@ public class MythEntity {
     private int shockedFactor;
 
     @Column(name = "published_date")
-    private Date publishedDate;
+    private LocalDate publishedDate;
 
     @Column(name = "content")
     private String content;
