@@ -1,5 +1,6 @@
 package com.mythsnomore.MythsNoMore.entity;
 import jakarta.persistence.*;
+import org.springframework.cglib.core.Local;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
@@ -46,7 +47,7 @@ public class MythEntity {
 
 
 
-    public MythEntity(Long id, String title, String description, String topic, String imageUrl, int likes, int shockedFactor, Date publishedDate, String content, String fact, Boolean featured) {
+    public MythEntity(Long id, String title, String description, String topic, String imageUrl, int likes, int shockedFactor, LocalDate publishedDate, String content, String fact, Boolean featured) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -120,11 +121,11 @@ public class MythEntity {
         this.shockedFactor = shockedFactor;
     }
 
-    public Date getPublishedDate() {
+    public LocalDate getPublishedDate() {
         return publishedDate;
     }
 
-    public void setPublishedDate(Date publishedDate) {
+    public void setPublishedDate(LocalDate publishedDate) {
         this.publishedDate = publishedDate;
     }
 
