@@ -34,9 +34,22 @@ public class MythController {
         return mythService.saveMyth(mythEntity);
     }
 
-    @PutMapping
-    public MythEntity updateMyth(@RequestBody MythEntity mythEntity) {
-        return mythService.updateMyth(mythEntity);
+    @PutMapping("/{id}")
+    public MythEntity updateMyth(@PathVariable("id") Long id, @RequestBody MythEntity mythEntity) {
+        MythEntity existingMyth = mythService.findMythById(id);
+
+        // Update the existing myth entity with the new data
+        assert existingMyth != null;
+        existingMyth.setTitle(mythEntity.getTitle());
+        existingMyth.setDescription(mythEntity.getDescription());
+        existingMyth.setTopic(mythEntity.getTopic());
+        existingMyth.setImageUrl(mythEntity.getImageUrl());
+        existingMyth.setContent(mythEntity.getContent());
+        existingMyth.setFact(mythEntity.getFact());
+        existingMyth.setFeatured(mythEntity.getFeatured());
+        // Update other properties as needed
+
+        return mythService.updateMyth(existingMyth);
     }
 
     @DeleteMapping("/{id}")
