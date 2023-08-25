@@ -36,7 +36,7 @@ public class MythEntity {
     @Column(name = "published_date")
     private LocalDate publishedDate;
 
-    @Column(name = "content")
+    @Column(name = "content", columnDefinition = "CLOB")
     private String content;
 
     @Column(name = "fact")
