@@ -39,7 +39,7 @@ public class MythEntity {
     @Column(name = "content", columnDefinition = "CLOB")
     private String content;
 
-    @Column(name = "fact")
+    @Column(name = "fact", columnDefinition = "CLOB")
     private String fact;
 
     @Column(name = "featured")
