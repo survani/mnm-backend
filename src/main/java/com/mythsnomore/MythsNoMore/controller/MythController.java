@@ -29,7 +29,7 @@ public class MythController {
         return mythService.findMythById(id);
     }
 
-    @GetMapping("/{title}")
+    @GetMapping("/title/{title}")
     public MythEntity findMythByTitle(@PathVariable("title") String title) {
         return mythService.findMythByTitle(title);
     }
