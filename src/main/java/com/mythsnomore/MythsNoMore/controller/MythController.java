@@ -24,14 +24,14 @@ public class MythController {
         return mythService.findAllMyths();
     }
 
-    @GetMapping("/{id}")
-    public MythEntity findMythById(@PathVariable("id") Long id) {
-        return mythService.findMythById(id);
-    }
-
     @GetMapping("/title/{title}")
     public MythEntity findMythByTitle(@PathVariable("title") String title) {
         return mythService.findMythByTitle(title);
+    }
+
+    @GetMapping("/{id}")
+    public MythEntity findMythById(@PathVariable("id") Long id) {
+        return mythService.findMythById(id);
     }
 
     @PostMapping

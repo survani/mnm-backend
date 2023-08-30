@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 @Repository
     public interface MythRepository extends JpaRepository<MythEntity, Long> {
 
-    @Query("SELECT m FROM MythEntity m WHERE m.title = :title")
+    @Query(nativeQuery = true, value = "SELECT * FROM myths WHERE myths.title = :title")
     MythEntity findByTitle(String title);
 
 }
