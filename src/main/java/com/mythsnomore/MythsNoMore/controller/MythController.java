@@ -29,6 +29,11 @@ public class MythController {
         return mythService.findMythById(id);
     }
 
+    @GetMapping("/{title}")
+    public MythEntity findMythByTitle(@PathVariable("title") String title) {
+        return mythService.findMythByTitle(title);
+    }
+
     @PostMapping
     public MythEntity saveMyth(@RequestBody MythEntity mythEntity) {
         return mythService.saveMyth(mythEntity);
