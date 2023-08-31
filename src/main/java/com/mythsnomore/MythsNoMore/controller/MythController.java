@@ -51,6 +51,7 @@ public class MythController {
         // Update the existing myth entity with the new data
         assert existingMyth != null;
         existingMyth.setTitle(mythEntity.getTitle());
+        existingMyth.setSlug(mythEntity.getSlug());
         existingMyth.setDescription(mythEntity.getDescription());
         existingMyth.setTopic(mythEntity.getTopic());
         existingMyth.setImageUrl(mythEntity.getImageUrl());
