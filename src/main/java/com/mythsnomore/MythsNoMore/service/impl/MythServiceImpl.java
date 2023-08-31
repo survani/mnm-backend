@@ -32,6 +32,11 @@ public class MythServiceImpl implements MythService {
     }
 
     @Override
+    public MythEntity findMythBySlug(String slug) {
+        return mythRepository.findBySlug(slug);
+    }
+
+    @Override
     public MythEntity saveMyth(MythEntity mythEntity) {
         return mythRepository.save(mythEntity);
     }

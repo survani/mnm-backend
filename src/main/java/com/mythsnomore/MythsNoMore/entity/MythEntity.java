@@ -18,6 +18,9 @@ public class MythEntity {
     @Column(name = "title")
     private String title;
 
+    @Column(name = "slug")
+    private String slug;
+
     @Column(name = "description")
     private String description;
 
@@ -47,9 +50,10 @@ public class MythEntity {
 
 
 
-    public MythEntity(Long id, String title, String description, String topic, String imageUrl, int likes, int shockedFactor, LocalDate publishedDate, String content, String fact, Boolean featured) {
+    public MythEntity(Long id, String title, String slug, String description, String topic, String imageUrl, int likes, int shockedFactor, LocalDate publishedDate, String content, String fact, Boolean featured) {
         this.id = id;
         this.title = title;
+        this.slug = slug;
         this.description = description;
         this.topic = topic;
         this.imageUrl = imageUrl;
@@ -79,6 +83,14 @@ public class MythEntity {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getSlug() {
+        return slug;
+    }
+
+    public void setSlug(String slug) {
+        this.slug = slug;
     }
 
     public String getDescription() {

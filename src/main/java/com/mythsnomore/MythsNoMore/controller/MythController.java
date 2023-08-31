@@ -24,6 +24,11 @@ public class MythController {
         return mythService.findAllMyths();
     }
 
+    @GetMapping("/slug/{slug}")
+    public MythEntity findMythBySlug(@PathVariable("slug") String slug) {
+        return mythService.findMythBySlug(slug);
+    }
+
     @GetMapping("/title/{title}")
     public MythEntity findMythByTitle(@PathVariable("title") String title) {
         return mythService.findMythByTitle(title);

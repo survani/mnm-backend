@@ -11,5 +11,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
     @Query(nativeQuery = true, value = "SELECT * FROM myths WHERE myths.title = :title")
     MythEntity findByTitle(String title);
 
+    @Query(nativeQuery = true, value = "SELECT * FROM myths WHERE myths.slug = :slug")
+    MythEntity findBySlug(String slug);
+
 }
 

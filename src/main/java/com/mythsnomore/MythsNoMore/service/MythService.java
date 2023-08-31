@@ -9,6 +9,7 @@ public interface MythService {
     List<MythEntity> findAllMyths();
     MythEntity findMythById(Long id);
     MythEntity findMythByTitle(String title);
+    MythEntity findMythBySlug(String slug);
     MythEntity saveMyth(MythEntity mythEntity);
     MythEntity updateMyth(MythEntity mythEntity);
 
