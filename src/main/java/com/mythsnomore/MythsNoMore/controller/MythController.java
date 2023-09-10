@@ -58,6 +58,7 @@ public class MythController {
         existingMyth.setContent(mythEntity.getContent());
         existingMyth.setFact(mythEntity.getFact());
         existingMyth.setFeatured(mythEntity.getFeatured());
+        existingMyth.setLikes(mythEntity.getLikes());
         // Update other properties as needed
 
         return mythService.updateMyth(existingMyth);
