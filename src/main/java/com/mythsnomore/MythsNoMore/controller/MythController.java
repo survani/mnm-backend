@@ -2,6 +2,8 @@ package com.mythsnomore.MythsNoMore.controller;
 
 import com.mythsnomore.MythsNoMore.entity.MythEntity;
 import com.mythsnomore.MythsNoMore.service.MythService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,8 +22,8 @@ public class MythController {
     }
 
     @GetMapping
-    public List<MythEntity> findAllMyths() {
-        return mythService.findAllMyths();
+    public Page<MythEntity> findAllMyths(Pageable pageable) {
+        return mythService.findAllMyths(pageable);
     }
 
     @GetMapping("/slug/{slug}")
